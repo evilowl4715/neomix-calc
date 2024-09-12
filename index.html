@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+        />
+        <link rel="stylesheet" href="main.css" />
+        <title>calc</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="CalcLetters" class="calc">
+                <div class="calc__block">
+                    <div class="calc__img">
+                        <img src="letter.png" alt="" />
+                    </div>
+
+                    <div class="calc__options">
+                        <div class="calc__option">
+                            <input
+                                class="calc__input"
+                                type="text"
+                                id="LetterText"
+                                placeholder="Введите текст вывески"
+                            />
+                        </div>
+
+                        <div class="calc__option">
+                            <h3>Вид</h3>
+                            <div class="calc__view">
+                                <div
+                                    class="calc__view-item active"
+                                    data-name="Несветовые"
+                                >
+                                    <svg
+                                        width="13"
+                                        height="20"
+                                        viewBox="0 0 13 20"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M6.44428 0.32666C2.96611 0.32666 0.453644 2.91885 0.055209 5.7032C-0.193226 7.55946 0.406773 9.36885 1.65367 10.7376C2.75054 11.9095 3.35054 13.4751 3.35054 15.0876L3.34581 17.6282C3.34581 18.6548 4.19428 19.4845 5.24428 19.4845H7.69115C8.74115 19.4845 9.58962 18.6548 9.58962 17.6282L9.59428 15.0876C9.59428 13.4282 10.1427 11.9095 11.1927 10.836C12.3411 9.66419 12.9411 8.15007 12.9411 6.5845C12.9365 3.11106 9.98802 0.32666 6.44428 0.32666ZM8.63802 17.6282C8.63802 18.1157 8.23962 18.5095 7.73802 18.5095H5.29115C4.78962 18.5095 4.39115 18.1204 4.39115 17.6282V16.5032H8.63336V17.6282H8.63802ZM10.4943 10.1517C9.24741 11.422 8.59581 13.1798 8.59581 15.0876V15.5282H4.35366V15.0876C4.35366 13.2782 3.60367 11.4735 2.35679 10.1048C1.2599 8.9329 0.809896 7.41885 1.00677 5.8532C1.35833 3.50946 3.53802 1.30635 6.44894 1.30635C9.49581 1.30635 11.9427 3.70167 11.9427 6.5845C11.9427 7.90167 11.4411 9.17198 10.4943 10.1517Z"
+                                            fill="black"
+                                        />
+                                    </svg>
+                                    Несветовые
+                                </div>
+                                <div
+                                    class="calc__view-item"
+                                    data-name="Световые"
+                                >
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g clip-path="url(#clip0_104_102)">
+                                            <path
+                                                d="M11.9999 4.32654C8.52178 4.32654 6.00931 6.91873 5.61087 9.70308C5.36244 11.5593 5.96244 13.3687 7.20933 14.7375C8.3062 15.9093 8.9062 17.475 8.9062 19.0875L8.90147 21.6281C8.90147 22.6547 9.74994 23.4844 10.7999 23.4844H13.2468C14.2968 23.4844 15.1453 22.6547 15.1453 21.6281L15.1499 19.0875C15.1499 17.4281 15.6983 15.9093 16.7483 14.8359C17.8968 13.6641 18.4968 12.15 18.4968 10.5844C18.4922 7.11094 15.5437 4.32654 11.9999 4.32654ZM14.1937 21.6281C14.1937 22.1156 13.7953 22.5093 13.2937 22.5093H10.8468C10.3453 22.5093 9.94681 22.1203 9.94681 21.6281V20.5031H14.189V21.6281H14.1937ZM16.0499 14.1516C14.8031 15.4219 14.1515 17.1796 14.1515 19.0875V19.5281H9.90933V19.0875C9.90933 17.2781 9.15933 15.4734 7.91246 14.1047C6.81556 12.9328 6.36556 11.4187 6.56244 9.85308C6.914 7.50934 9.09368 5.30623 12.0046 5.30623C15.0515 5.30623 17.4983 7.70155 17.4983 10.5844C17.4983 11.9016 16.9968 13.1719 16.0499 14.1516Z"
+                                                fill="#000000"
+                                            />
+                                            <path
+                                                d="M12.497 0.515625H11.4985V2.85937H12.497V0.515625Z"
+                                                fill="#000000"
+                                            />
+                                            <path
+                                                d="M18.0518 5.03435L18.7502 5.73279L20.4611 4.08747L19.758 3.38904L18.0518 5.03435Z"
+                                                fill="#000000"
+                                            />
+                                            <path
+                                                d="M23.4845 11.0718H21.0376V12.0515H23.4845V11.0718Z"
+                                                fill="#000000"
+                                            />
+                                            <path
+                                                d="M2.9625 11.0718H0.515625V12.0515H2.9625V11.0718Z"
+                                                fill="#000000"
+                                            />
+                                            <path
+                                                d="M4.22364 3.3844L3.52051 4.08284L5.23145 5.72815L5.92988 5.02971L4.22364 3.3844Z"
+                                                fill="#000000"
+                                            />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_104_102">
+                                                <rect
+                                                    width="24"
+                                                    height="24"
+                                                    fill="white"
+                                                />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    Световые
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc__option">
+                            <h3>Высота букв <sub>см</sub></h3>
+                            <div class="calc__height">
+                                <div class="calc__height-input">
+                                    <input
+                                        type="number"
+                                        id="LetterRangeHeightInput"
+                                        class="calc__range-input"
+                                        value="118"
+                                        min="0"
+                                        max="120"
+                                    />
+                                </div>
+                                <div class="calc__range-block">
+                                    <div
+                                        id="LetterRangeHeight"
+                                        class="calc__range"
+                                    >
+                                        <div
+                                            id="LetterRangeHeightTooltip"
+                                            class="calc__range-tooltip"
+                                        >
+                                            118
+                                        </div>
+                                    </div>
+                                    <div class="calc__range-labels">
+                                        <span>0</span>
+                                        <span>120</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc__option">
+                            <div id="TypeLetters">
+                                <div class="calc__type-letters">
+                                    <div class="calc__type-letter">
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name="type-letter"
+                                                value="Объемные буквы"
+                                                checked
+                                            />
+                                            <span class="radio-circle"></span>
+                                            <span class="radio-text"
+                                                >Объемные буквы</span
+                                            >
+                                        </label>
+                                    </div>
+                                    <div class="calc__type-letter">
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name="type-letter"
+                                                value="Плоские буквы"
+                                            />
+                                            <span class="radio-circle"></span>
+                                            <span class="radio-text"
+                                                >Плоские буквы</span
+                                            >
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calc__type-letters">
+                                <div class="calc__type-letter">
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="type-font"
+                                            value="Простой шрифт"
+                                            data-price="0"
+                                            checked
+                                        />
+                                        <span class="radio-circle"></span>
+                                        <span class="radio-text"
+                                            >Простой шрифт</span
+                                        >
+                                    </label>
+                                </div>
+                                <div class="calc__type-letter">
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="type-font"
+                                            value="Сложный шрифт"
+                                            data-price="10"
+                                        />
+                                        <span class="radio-circle"></span>
+                                        <span class="radio-text"
+                                            >Сложный шрифт</span
+                                        >
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc__option">
+                            <div id="ForVolumetricLetters" class="calc__select">
+                                <div class="calc__select-result">
+                                    <span>Выберите материал</span>
+                                    <svg
+                                        width="18"
+                                        height="9"
+                                        viewBox="0 0 18 9"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M9.68674 8.3512C9.30132 8.71533 8.69868 8.71533 8.31326 8.3512L1.3016 1.7269C0.644002 1.10563 1.08368 2.53632e-07 1.98834 3.3272e-07L16.0117 1.55868e-06C16.9163 1.63776e-06 17.356 1.10563 16.6984 1.7269L9.68674 8.3512Z"
+                                            fill="#0067D3"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="calc__select-options">
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Акрил"
+                                        data-price="60"
+                                    >
+                                        Акрил
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Металл"
+                                        data-price="155"
+                                    >
+                                        Металл
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Пластик ПВХ"
+                                        data-price="55"
+                                    >
+                                        ПВХ
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="ForFlatLetters" class="calc__select">
+                                <div class="calc__select-result">
+                                    <span>Выберите материал</span>
+                                    <svg
+                                        width="18"
+                                        height="9"
+                                        viewBox="0 0 18 9"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M9.68674 8.3512C9.30132 8.71533 8.69868 8.71533 8.31326 8.3512L1.3016 1.7269C0.644002 1.10563 1.08368 2.53632e-07 1.98834 3.3272e-07L16.0117 1.55868e-06C16.9163 1.63776e-06 17.356 1.10563 16.6984 1.7269L9.68674 8.3512Z"
+                                            fill="#0067D3"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="calc__select-options">
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="ПВХ 3-5 мм"
+                                        data-price="20"
+                                    >
+                                        ПВХ 3-5 мм
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="ПВХ 6-10 мм"
+                                        data-price="25"
+                                    >
+                                        ПВХ 6-10 мм
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="ПВХ 20 мм"
+                                        data-price="42"
+                                    >
+                                        ПВХ 20 мм
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Акрил 3-5 мм"
+                                        data-price="45"
+                                    >
+                                        Акрил 3-5 мм
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Акрил 6-10 мм"
+                                        data-price="65"
+                                    >
+                                        Акрил 6-10 мм
+                                    </div>
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Композит 3 мм"
+                                        data-price="45"
+                                    >
+                                        Композит 3 мм
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="ForLightLetters" class="calc__select">
+                                <div class="calc__select-result">
+                                    <span>Выберите материал</span>
+                                    <svg
+                                        width="18"
+                                        height="9"
+                                        viewBox="0 0 18 9"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M9.68674 8.3512C9.30132 8.71533 8.69868 8.71533 8.31326 8.3512L1.3016 1.7269C0.644002 1.10563 1.08368 2.53632e-07 1.98834 3.3272e-07L16.0117 1.55868e-06C16.9163 1.63776e-06 17.356 1.10563 16.6984 1.7269L9.68674 8.3512Z"
+                                            fill="#0067D3"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="calc__select-options">
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Полистерол фронтальное"
+                                        data-price="85"
+                                    >
+                                        Полистерол фронтальное
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Комбинированная подсветка"
+                                        data-price="105"
+                                    >
+                                        Комбинированная подсветка
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Металл контражур"
+                                        data-price="175"
+                                    >
+                                        Металл контражур
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Пиксельное свечение"
+                                        data-price="145"
+                                    >
+                                        Пиксельное свечение
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Динамическое свечение"
+                                        data-price="205"
+                                    >
+                                        Динамическое свечение
+                                    </div>
+
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Акрил фронтальное свечение"
+                                        data-price="95"
+                                    >
+                                        Акрил фронтальное свечение
+                                    </div>
+                                    <div
+                                        class="calc__select-option"
+                                        data-name="Контражурное свечение"
+                                        data-price="100"
+                                    >
+                                        Контражурное свечение
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc__option">
+                            <h3>Подложка из композита</h3>
+                            <div class="calc__substrate">
+                                <div
+                                    id="YesSubstrate"
+                                    class="calc__substrate-item"
+                                >
+                                    Нужна
+                                </div>
+                                <div
+                                    id="NoSubstrate"
+                                    class="calc__substrate-item active"
+                                >
+                                    Не нужна
+                                </div>
+                            </div>
+                            <div class="calc__substrate-size">
+                                <div class="calc__substrate-size-row">
+                                    <input
+                                        type="number"
+                                        placeholder="Ширина мм"
+                                        id="SubstrateWidth"
+                                    />
+                                    <input
+                                        type="number"
+                                        placeholder="Высота мм"
+                                        id="SubstrateHeight"
+                                    />
+                                    <div class="calc__substrate-back">
+                                        Не нужна
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calc__result">
+                        <div class="calc__result-info">
+                            <div class="calc__result-block">
+                                <div id="LettersText" class="calc__result-item">
+                                    <p>Текст</p>
+                                    <div class="line"></div>
+                                    <span>Магазин спелых фруктов</span>
+                                </div>
+                                <div
+                                    id="LettersHeight"
+                                    class="calc__result-item"
+                                >
+                                    <p>Высота букв</p>
+                                    <div class="line"></div>
+                                    <span>118 см</span>
+                                </div>
+                                <div
+                                    id="LettersLight"
+                                    class="calc__result-item"
+                                >
+                                    <p>Подсветка</p>
+                                    <div class="line"></div>
+                                    <span>Несветовые</span>
+                                </div>
+                                <div
+                                    id="LettersMaterial"
+                                    class="calc__result-item"
+                                >
+                                    <p>Материал</p>
+                                    <div class="line"></div>
+                                    <span>пусто</span>
+                                </div>
+                                <div id="LettersFont" class="calc__result-item">
+                                    <p>Тип шрифта</p>
+                                    <div class="line"></div>
+                                    <span>Простой шрифт</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="calc__result-block result-block-substrate"
+                            >
+                                <div
+                                    id="ResultSubstrate"
+                                    class="calc__result-item"
+                                >
+                                    <p>Подложка</p>
+                                    <div class="line"></div>
+                                    <span>Да</span>
+                                </div>
+                                <div
+                                    id="ResultSubstrateWidth"
+                                    class="calc__result-item"
+                                >
+                                    <p>Ширина</p>
+                                    <div class="line"></div>
+                                    <span>3250 мм</span>
+                                </div>
+                                <div
+                                    id="ResultSubstrateHeight"
+                                    class="calc__result-item"
+                                >
+                                    <p>Высота</p>
+                                    <div class="line"></div>
+                                    <span>4950 мм</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc__result-total">
+                            <div id="total">
+                                <p>Итого:</p>
+                                <span>0</span>
+                            </div>
+                            <div class="calc__result-total-note">
+                                Для более точного рассчета, оставьте заявку!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
