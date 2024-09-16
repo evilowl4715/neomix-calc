@@ -27,6 +27,50 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+.calc-tabs {
+    display: flex;
+    gap: 1px;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.calc-tab {
+    flex: 1;
+    background: #dcdcdc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.calc-tab:hover {
+    color: #fff;
+    background: #0067d3;
+}
+
+.calc-tab.active {
+    color: #fff;
+    background: #0067d3;
+}
+
+.calc-content {
+    display: none;
+    background: #fffeff;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+}
+
+.calc-content:first-child {
+    display: block;
+}
+
 /* КАЛЬКУЛЯТОР */
 
 .calc__block {
@@ -143,6 +187,9 @@ input[type="number"] {
     width: 100%;
     box-sizing: border-box;
     padding: 0 30px 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .calc__range-input {
@@ -480,7 +527,7 @@ input[type="number"] {
     align-items: center;
 }
 
-#total {
+.total-price {
     display: flex;
     align-items: flex-end;
     max-width: 200px;
@@ -488,14 +535,14 @@ input[type="number"] {
     gap: 5px;
 }
 
-#total p {
+.total-price p {
     font-weight: 500;
     font-size: 18px;
     line-height: 30px;
     color: #333;
 }
 
-#total span {
+.total-price span {
     font-weight: 700;
     font-size: 26px;
     line-height: 38px;
@@ -508,4 +555,13 @@ input[type="number"] {
     line-height: 26px;
     color: #f00;
     flex: 1;
+}
+
+.calc-format-panel {
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.calc-format-panel .calc__type-letter {
+    font-weight: 600;
 }
